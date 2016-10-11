@@ -8,18 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var core_1 = require('@angular/core');
+var tree_node_1 = require('./tree-node');
+var store_1 = require('./redux/store');
+var tree_node_service_1 = require('./tree-node-service');
+var CountryDemo = (function () {
+    function CountryDemo() {
+        this.node = null;
     }
-    AppComponent = __decorate([
+    CountryDemo.prototype.ngOnInit = function () {
+        this.node = new tree_node_1.TreeNode('root', './tree-view-data/countries.json', '');
+    };
+    CountryDemo = __decorate([
         core_1.Component({
-            selector: 'app',
-            template: "\n<home></home>\n"
+            selector: 'country-demo',
+            template: "<h1>Lazy loaded TreeView using Redux and RxJs</h1>\n            <lazy-tree-view [root]=\"node\"></lazy-tree-view>",
+            providers: [store_1.Store, tree_node_service_1.TreeNodeService]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CountryDemo);
+    return CountryDemo;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CountryDemo = CountryDemo;
+//# sourceMappingURL=country-demo.js.map

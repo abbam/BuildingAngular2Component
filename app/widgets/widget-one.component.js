@@ -8,24 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var platform_browser_1 = require("@angular/platform-browser");
-//import {AppComponent} from "./app.component";
-var tree_view_1 = require("./treeView/tree-view");
 var core_1 = require("@angular/core");
-var home_module_1 = require("./home/home.module");
-var services_module_1 = require("./services/services.module");
-var AppModule = (function () {
-    function AppModule() {
+var WidgetOne = (function () {
+    function WidgetOne() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, home_module_1.HomeModule, services_module_1.ServicesModule.forRoot()],
-            declarations: [tree_view_1.LazyTreeView],
-            bootstrap: [tree_view_1.LazyTreeView]
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], WidgetOne.prototype, "message", void 0);
+    WidgetOne = __decorate([
+        core_1.Component({
+            selector: 'widget-one',
+            styles: [
+                "\n\t:host{\n\t\tdisplay: block;\n\t\tborder : 3px dashed black;\n\t\tfont-family:\"Times New Roman\"\n\t}\n\t"
+            ],
+            template: "\n\t<div >one's Message </div>\n\t<h3>{{message}}</h3>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], WidgetOne);
+    return WidgetOne;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.WidgetOne = WidgetOne;
+//# sourceMappingURL=widget-one.component.js.map

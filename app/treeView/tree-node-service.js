@@ -8,18 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var core_1 = require('@angular/core');
+var store_1 = require('./redux/store');
+var TreeNodeService = (function () {
+    function TreeNodeService(_store) {
+        this._store = _store;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app',
-            template: "\n<home></home>\n"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    TreeNodeService.prototype.loadTreeNodes = function (root) {
+        if (root.url) {
+            this._store.dispatchAction({ key: root.key, url: root.url, name: 'LOAD_NODES' });
+        }
+    };
+    TreeNodeService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [store_1.Store])
+    ], TreeNodeService);
+    return TreeNodeService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TreeNodeService = TreeNodeService;
+//# sourceMappingURL=tree-node-service.js.map

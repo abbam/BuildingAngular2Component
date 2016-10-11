@@ -8,24 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var platform_browser_1 = require("@angular/platform-browser");
-//import {AppComponent} from "./app.component";
-var tree_view_1 = require("./treeView/tree-view");
 var core_1 = require("@angular/core");
-var home_module_1 = require("./home/home.module");
-var services_module_1 = require("./services/services.module");
-var AppModule = (function () {
-    function AppModule() {
+var WidgetTwo = (function () {
+    function WidgetTwo() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, home_module_1.HomeModule, services_module_1.ServicesModule.forRoot()],
-            declarations: [tree_view_1.LazyTreeView],
-            bootstrap: [tree_view_1.LazyTreeView]
+    WidgetTwo = __decorate([
+        core_1.Component({
+            selector: 'widget-two',
+            styles: ["\n\t:host{\n\t\tdisplay:block;\n\t\tborder:3px solid red;\n\t}"
+            ],
+            template: "\n\t<h2>Above </h2>\n\t <ng-content select=\"[.header]\"></ng-content>\n\t <ng-content select=\"[content]\"></ng-content>\n\t <ng-content select=\"[footer]\"></ng-content>\n\t <ng-content></ng-content>\n\t<h2>Below </h2>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], WidgetTwo);
+    return WidgetTwo;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.WidgetTwo = WidgetTwo;
+//# sourceMappingURL=widget-two.component.js.map

@@ -1,7 +1,8 @@
 import {Component, ViewChild,ViewContainerRef,ComponentFactoryResolver} from "@angular/core";
 import {SimpleService}  from "../services/services.module";
-import {WidgetThree}  from "../widgets/widget-three.component"
-
+import {WidgetThree}  from "../widgets/widget-three.component";
+import {LazyTreeView}  from "../treeView/tree-view";
+import {CountryDemo}  from "../treeView/country-demo";
 @Component({
 	selector : 'home',
 	template :  `
@@ -26,6 +27,9 @@ import {WidgetThree}  from "../widgets/widget-three.component"
         <h3> My {{description}} template</h3>
         <button>My {{description}} Button </button>
 	 </template>
+	 <country-demo></country-demo>
+	
+
 	`
 })
 

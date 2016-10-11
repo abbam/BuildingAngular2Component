@@ -8,24 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var platform_browser_1 = require("@angular/platform-browser");
-//import {AppComponent} from "./app.component";
-var tree_view_1 = require("./treeView/tree-view");
 var core_1 = require("@angular/core");
-var home_module_1 = require("./home/home.module");
-var services_module_1 = require("./services/services.module");
-var AppModule = (function () {
-    function AppModule() {
+var widget_one_component_1 = require("./widget-one.component");
+var common_1 = require("@angular/common");
+var widget_two_component_1 = require("./widget-two.component");
+var widget_three_component_1 = require("./widget-three.component");
+var WidgetModule = (function () {
+    function WidgetModule() {
     }
-    AppModule = __decorate([
+    WidgetModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, home_module_1.HomeModule, services_module_1.ServicesModule.forRoot()],
-            declarations: [tree_view_1.LazyTreeView],
-            bootstrap: [tree_view_1.LazyTreeView]
+            imports: [common_1.CommonModule],
+            declarations: [widget_one_component_1.WidgetOne, widget_two_component_1.WidgetTwo, widget_three_component_1.WidgetThree],
+            entryComponents: [widget_three_component_1.WidgetThree],
+            exports: [widget_one_component_1.WidgetOne, widget_two_component_1.WidgetTwo, widget_three_component_1.WidgetThree, common_1.CommonModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], WidgetModule);
+    return WidgetModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.WidgetModule = WidgetModule;
+//# sourceMappingURL=widgets.module.js.map
